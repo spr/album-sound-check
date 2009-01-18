@@ -18,12 +18,20 @@ class SoundCheck(object):
             self.field = 'iTunNORM'
         else:
             self.field = '----:com.apple.iTunes:iTunNORM'
-        parts = self.get_parts()
-        self.sc1000 = (parts[0], parts[1])
-        self.sc2500 = (parts[2], parts[3])
-        self.so = (parts[4], parts[5])
-        self.peak = (parts[6], parts[7])
-        self.st = (parts[8], parts[9])
+        if self.field not in self.tag.keys():
+            print "Missing Field: %s" % self.tag.keys()
+            self.sc1000 = (0,0)
+            self.sc2500 = (0,0)
+            self.so = (0,0)
+            self.peak = (0,0)
+            self.st = (0,0)
+        else:
+            parts = self.get_parts()
+            self.sc1000 = (parts[0], parts[1])
+            self.sc2500 = (parts[2], parts[3])
+            self.so = (parts[4], parts[5])
+            self.peak = (parts[6], parts[7])
+            self.st = (parts[8], parts[9])
 
     def soundcheck2db(self, sc, gain):
         return -10 * math.log10(sc/gain)

@@ -17,6 +17,7 @@ class controller(NSWindowController):
 
     text = IBOutlet()
     tableView = IBOutlet()
+    spinner = IBOutlet()
 
     stuff = []
     l_avg = 0
@@ -24,6 +25,7 @@ class controller(NSWindowController):
 
     def awakeFromNib(self):
         self.text.setStringValue_("")
+        self.spinner.setUsesThreadedAnimation_(YES)
 
 # NSTableDataSource
 
@@ -45,7 +47,6 @@ class controller(NSWindowController):
         setfor = [x for x in self.stuff if x['apply'] == YES]
 
     def loadDir(self, dirname):
-        self.stuff = []
         ok_files = []
         for root, dirs, files in os.walk(dirname):
             ok_files += [os.path.join(root, n) for n in files \
@@ -58,7 +59,9 @@ class controller(NSWindowController):
             hash['file'] = os.path.basename(file)
             hash['db'] = "%+.2f, %+.2f" % (hash['obj'].dB[0], hash['obj'].dB[1])
             self.stuff.append(hash)
+        self.spinner.startAnimation_(self)
         self.tableView.reloadData()
+        self.spinner.stopAnimation_(self)
         self.generateAverage()
 
     def generateAverage(self):
@@ -76,13 +79,10 @@ class controller(NSWindowController):
     def open_(self, sender):
         panel = NSOpenPanel.openPanel()
         panel.setCanChooseDirectories_(YES)
-        panel.setAllowsMultipleSelection_(NO)
-        panel.beginSheetForDirectory_file_types_modalForWindow_modalDelegate_didEndSelector_contextInfo_(
-                "~/Music/iTunes/iTunes Music/", None, [], NSApp().mainWindow(),
-                self, 'openPanelDidEnd:panel:returnCode:contextInfo:', 0)
-
-    @AppHelper.endSheetMethod
-    def openPanelDidEnd_panel_returnCode_contextInfo_(self, panel, returnCode,
-            contextInfo):
+        panel.setAllowsMultipleSelection_(YES)
+        returnCode = panel.runModalForDirectory_file_types_(
+                "~/Music/iTunes/iTunes Music/", None, [])
         if returnCode:
-            self.loadDir(panel.filenames()[0])
+            self.stuff = []
+            for filename in panel.filenames():
+                self.loadDir(filename)
