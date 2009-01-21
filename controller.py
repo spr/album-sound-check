@@ -22,6 +22,7 @@ class controller(NSWindowController):
     stuff = []
     l_avg = 0
     r_avg = 0
+    directories = []
 
     def awakeFromNib(self):
         self.text.setStringValue_("")
@@ -45,9 +46,16 @@ class controller(NSWindowController):
     @IBAction
     def apply_(self, sender):
         setfor = [x for x in self.stuff if x['apply'] == YES]
+        for file in setfor:
+            file['obj'].setdB((self.l_avg, self.r_avg))
+            file['obj'].setdB_2500((self.l_avg, self.r_avg))
+            file['obj'].save()
+            file['db'] = "%+.2f, %+.2f" % (file['obj'].dB[0], file['obj'].dB[1])
+        self.tableView.reloadData()
 
     def loadDir(self, dirname):
         ok_files = []
+        self.spinner.startAnimation_(self)
         for root, dirs, files in os.walk(dirname):
             ok_files += [os.path.join(root, n) for n in files \
                     if (re.match(r'.*(\.mp3|\.m4a|\.m4p|\.mp4)$', n))]
@@ -59,10 +67,9 @@ class controller(NSWindowController):
             hash['file'] = os.path.basename(file)
             hash['db'] = "%+.2f, %+.2f" % (hash['obj'].dB[0], hash['obj'].dB[1])
             self.stuff.append(hash)
-        self.spinner.startAnimation_(self)
         self.tableView.reloadData()
-        self.spinner.stopAnimation_(self)
         self.generateAverage()
+        self.spinner.stopAnimation_(self)
 
     def generateAverage(self):
         self.l_avg, self.r_avg = (0, 0)
@@ -72,7 +79,8 @@ class controller(NSWindowController):
             right = [x[1] for x in use]
             self.l_avg = sum(left)/len(left)
             self.r_avg = sum(right)/len(right)
-        self.text.setStringValue_("%+.2f dB, %+.2f dB" % (self.l_avg, self.r_avg))
+        self.text.setStringValue_("%+.2f dB, %+.2f dB" % (self.l_avg,
+                self.r_avg))
 
 # Open panel
     @IBAction
@@ -80,9 +88,9 @@ class controller(NSWindowController):
         panel = NSOpenPanel.openPanel()
         panel.setCanChooseDirectories_(YES)
         panel.setAllowsMultipleSelection_(YES)
-        returnCode = panel.runModalForDirectory_file_types_(
-                "~/Music/iTunes/iTunes Music/", None, [])
+        returnCode = panel.runModalForDirectory_file_types_("", None, [])
         if returnCode:
             self.stuff = []
-            for filename in panel.filenames():
+            self.directories = panel.filenames()
+            for filename in self.directories:
                 self.loadDir(filename)

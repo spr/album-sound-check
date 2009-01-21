@@ -10,6 +10,7 @@ from __future__ import division
 from mutagen.mp3 import MP3
 import tag_wrapper
 import math
+from Foundation import NSLog
 
 class SoundCheck(object):
     def __init__(self, file):
@@ -19,7 +20,7 @@ class SoundCheck(object):
         else:
             self.field = '----:com.apple.iTunes:iTunNORM'
         if self.field not in self.tag.keys():
-            print "Missing Field: %s" % self.tag.keys()
+            NSLog("Missing Field: %s" % self.tag.keys())
             self.sc1000 = (0,0)
             self.sc2500 = (0,0)
             self.so = (0,0)
@@ -34,6 +35,8 @@ class SoundCheck(object):
             self.st = (parts[8], parts[9])
 
     def soundcheck2db(self, sc, gain):
+        if sc == 0:
+            return 0.0
         return -10 * math.log10(sc/gain)
     
     def db2soundcheck(self, db, gain):

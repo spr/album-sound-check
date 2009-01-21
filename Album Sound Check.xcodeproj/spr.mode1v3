@@ -323,10 +323,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B7486E300F23EAE000EDD0B6</string>
+										<string>B7AC8B6B0F26ECD0006CD3B4</string>
 										<key>history</key>
 										<array>
-											<string>B77C63B50F23E1CC0009EDDF</string>
+											<string>B7486E300F23EAE000EDD0B6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -384,9 +384,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B7486E120F23E3C100EDD0B6</string>
+				<string>B7AC8B250F26E0C2006CD3B4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B7486E130F23E3C100EDD0B6</string>
+				<string>B7AC8B260F26E0C2006CD3B4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -520,13 +520,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>B7486E310F23EAE000EDD0B6</string>
-		<string>B7486E320F23EAE000EDD0B6</string>
-		<string>B7486E330F23EAE000EDD0B6</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>B7AC8B2F0F26E0C2006CD3B4</string>
+		<string>B7AC8B300F26E0C2006CD3B4</string>
+		<string>B7AC8B310F26E0C2006CD3B4</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>B77DAC790F229FAE007D0562</string>
-		<string>/Users/spr/Desktop/Album Sound Check/Album Sound Check.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/spr/dev/Album Sound Check/Album Sound Check.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>42 222 690 397 0 0 1280 778 </string>
@@ -606,7 +606,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B77DAC790F229FAE007D0562</string>
-				<string>B7486E280F23EADF00EDD0B6</string>
+				<string>B7AC8B270F26E0C2006CD3B4</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -648,8 +648,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 202}}</string>
-											<string>{{316, 0}, {378, 202}}</string>
+											<string>{{0, 0}, {316, 203}}</string>
+											<string>{{316, 0}, {378, 203}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -664,8 +664,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 202}}</string>
-											<string>{{0, 202}, {694, 179}}</string>
+											<string>{{0, 0}, {694, 203}}</string>
+											<string>{{0, 203}, {694, 178}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -698,7 +698,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 202}}</string>
+									<string>{{316, 0}, {378, 203}}</string>
 									<key>RubberWindowFrame</key>
 									<string>85 235 694 422 0 0 1280 778 </string>
 								</dict>
@@ -726,13 +726,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>B7486E290F23EADF00EDD0B6</string>
+				<string>B7AC8B280F26E0C2006CD3B4</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>B7486E2A0F23EADF00EDD0B6</string>
-				<string>B7486E2B0F23EADF00EDD0B6</string>
-				<string>B7486E2C0F23EADF00EDD0B6</string>
-				<string>B7486E2D0F23EADF00EDD0B6</string>
-				<string>B7486E2E0F23EADF00EDD0B6</string>
+				<string>B7AC8B290F26E0C2006CD3B4</string>
+				<string>B7AC8B2A0F26E0C2006CD3B4</string>
+				<string>B7AC8B2B0F26E0C2006CD3B4</string>
+				<string>B7AC8B2C0F26E0C2006CD3B4</string>
+				<string>B7AC8B2D0F26E0C2006CD3B4</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -873,7 +873,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {650, 209}}</string>
 								<key>RubberWindowFrame</key>
-								<string>78 439 650 250 0 0 1280 778 </string>
+								<string>78 438 650 250 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -896,13 +896,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>B7486E2F0F23EADF00EDD0B6</string>
+				<string>B7AC8B2E0F26E0C2006CD3B4</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>78 439 650 250 0 0 1280 778 </string>
+			<string>78 438 650 250 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
