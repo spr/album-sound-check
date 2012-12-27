@@ -1,0 +1,10 @@
+Album Sound Check
+=================
+
+Resets the iTune's soundcheck tags to be the correct value across the album, not per-song.
+
+Uses the Python/Objective-C bridge.
+
+GPLv2.
+
+More details on behavior and use can be found in [this blog post][http://scottr.org/blog/2009/apr/22/album-sound-check-gui/] I wrote about the issue and solution.
